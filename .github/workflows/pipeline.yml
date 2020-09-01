@@ -14,5 +14,6 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: moondev/machine-images
           path: ctr/kind
-          tag_with_ref: true
-          tag_with_sha: true
+          tag: v1.19.1-rc.0
+          # tag_with_ref: true
+          # tag_with_sha: true
