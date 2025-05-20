@@ -1,19 +1,28 @@
-name: Ansible Lint
-on: [push, pull_request]
+name: pipeline
+on: workflow_dispatch
+# on: [push, pull_request]
 jobs:
   build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    # runs-on: ubuntu-latest
+    runs-on: self-hosted
+    # steps:
+    #   - name: Checkout code
+    #     uses: actions/checkout@v2
 
-      - name: Build and push Docker images
-        uses: docker/build-push-action@v1
-        with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-          repository: moondev/machine-images
-          path: ctr/kind
-          tag: v1.19.1-rc.0
-          # tag_with_ref: true
-          # tag_with_sha: true
+    steps:
+      - name: Hello world
+        shell: bash
+        run: |
+          echo "Hello World"
+          cat /etc/os-release
+
+      # - name: Build and push Docker images
+      #   uses: docker/build-push-action@v1
+      #   with:
+      #     username: ${{ secrets.DOCKER_USERNAME }}
+      #     password: ${{ secrets.DOCKER_PASSWORD }}
+      #     repository: moondev/machine-images
+      #     path: ctr/kind
+      #     tag: v1.19.1-rc.0
+      #     # tag_with_ref: true
+      #     # tag_with_sha: true
