@@ -1,5 +1,13 @@
 name: pipeline
-on: workflow_dispatch
+on: 
+  workflow_dispatch:
+    inputs:
+      path:
+        description: 'build path'     
+        required: true
+        default: 'foo/bar'
+      tags:
+        description: 'my tag'  
 # on: [push, pull_request]
 jobs:
   build:
