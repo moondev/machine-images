@@ -23,6 +23,12 @@ jobs:
         run: |
           echo "Hello World"
           cat /etc/os-release
+      - name: mp
+        shell: bash
+        run: |
+          multipaas find
+          multipass launch
+
 
       # - name: Build and push Docker images
       #   uses: docker/build-push-action@v1
